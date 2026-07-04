@@ -1,0 +1,30 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User preferences and settings storage mapped by uid.",
+      "type": "object",
+      "properties": {
+        "theme": {
+          "type": "string",
+          "description": "User selected color accent."
+        },
+        "activeModel": {
+          "type": "string",
+          "description": "User configuration active model choice."
+        },
+        "isPro": {
+          "type": "boolean",
+          "description": "Pro session indicator."
+        }
+      },
+      "required": ["theme", "activeModel", "isPro"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "Individual user preferences document."
+    }
+  }
+}
